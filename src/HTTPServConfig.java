@@ -7,7 +7,7 @@ import java.util.*;
 
 // Classe publique
 public class HTTPServConfig {
-  // Variables privées
+  // Variables privÃ©es
   private String CfgPath = null;
 
   // HomePath

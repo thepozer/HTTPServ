@@ -8,17 +8,17 @@ import java.util.*;
 public abstract class JavaGI {
 	protected Properties Prop = null;
 
-  // Founiture des données de travail
+  // Founiture des donnÃ©es de travail
   public void setData(Properties p){
 		Prop = p;
   }
 
-  // Récupération de l'entête
+  // RÃ©cupÃ©ration de l'entÃªte
   public String getHead() {
 		return null;
   }
 
-  // Récupération du résultat
+  // RÃ©cupÃ©ration du rÃ©sultat
   public String getMimeType(){
 		return "text/plain";
 	}

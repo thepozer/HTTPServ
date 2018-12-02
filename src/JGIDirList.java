@@ -11,13 +11,13 @@ public class JGIDirList extends JavaGI {
 
   public JGIDirList () {}
 
-  // Founiture des données de travail
+  // Founiture des donnÃ©es de travail
   public void setData(Properties p){
 		super.setData(p);
     genText();
   }
 
-  // Récupération du résultat
+  // RÃ©cupÃ©ration du rÃ©sultat
   public String getMimeType(){
 		return "text/html";
 	}
@@ -35,7 +35,7 @@ public class JGIDirList extends JavaGI {
   private void genText() {
     StringBuffer tempo = new StringBuffer ("<HTML>\n<HEAD>\n<TITLE>Directory : " + Prop.get("Directory") + "</TITLE>\n</HEAD>\n<BODY>\n");
     try {
-      // Récupération des noms de fichiers
+      // RÃ©cupÃ©ration des noms de fichiers
       String Dir = (String)Prop.get("Directory");
       String sep = System.getProperty("file.separator");
 	    File RepBase = new File (Prop.get("HomePath") + sep + Dir);
@@ -62,7 +62,7 @@ public class JGIDirList extends JavaGI {
       	pos = (Dir.substring(0, Dir.length() - 2)).lastIndexOf("/");
         back = Dir.substring(0, pos+1);
       }
-			// Génération de la page HTML
+			// GÃ©nÃ©ration de la page HTML
 			tempo.append("<H1>Directory : " + Prop.get("Directory") + "</H1>\n<HR>\n");
       tempo.append("<P><A HREF=\"" + back + "\">Parent Directory</A></P>\n<P>\n");
       tempo.append("<TABLE BORDER=0>\n<TR VALIGN=\"MIDDLE\" ALIGN=\"CENTER\"><TH>FileName :<TH>Length :<TH>Type :</TR>\n");

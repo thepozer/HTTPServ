@@ -49,7 +49,7 @@ public class HTTPServ {
       }
       // Creation de la connection
       clnt = new HTTPConnection(sckt, Config);
-      // Création et lancement du Thread
+      // CrÃ©ation et lancement du Thread
       t = new Thread(clnt);
       t.start();
       // Et on recommance ...

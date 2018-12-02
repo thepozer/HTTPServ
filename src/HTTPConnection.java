@@ -36,15 +36,15 @@ public class HTTPConnection implements Runnable {
     HTTPRequest req = null;
 
 		try {
-      // Récupération de la requète HTTP
+      // RÃ©cupÃ©ration de la requÃ¨te HTTP
 			req = new HTTPRequest(Lect);
       System.out.println(req);
-      // Test de la version de la requète
+      // Test de la version de la requÃ¨te
       if (req.getVersion() == 1.0f || req.getVersion() == 1.1f)
         // Test s'il s'agit d'une commande normale
         if (req.getType().equals("GET") || req.getType().equals("HEAD"))
           doGetHeadRequest(req);
-      // Déconnection
+      // DÃ©connection
 			Lect.close();
 			Ecrit.close();
 			skt.close();
@@ -65,14 +65,14 @@ public class HTTPConnection implements Runnable {
         // Si oui envois du fichier d'erreur
        	errorNum(req, 400);
       else {
-        // Test s'il s'agit d'un répertoire pour rajouter le nom de fichier par defaut
+        // Test s'il s'agit d'un rÃ©pertoire pour rajouter le nom de fichier par defaut
         if (f.isDirectory())
           f = new File(f, System.getProperty("file.separator") + Config.getProperty("DefaultFile"));
-        // S'il n'existe pas, liste le répertoire
+        // S'il n'existe pas, liste le rÃ©pertoire
         if (!f.exists())
     			doDirRequest(req);
         else {
-          // Sinon envois du fichier demandé
+          // Sinon envois du fichier demandÃ©
         	sendHeaderResponce(req.getVersion(),200 ,(int)f.length(), Config.getMimeType(getExtension(f)));
           if (req.getType().equals("GET"))
     		  	if (f != null) {
